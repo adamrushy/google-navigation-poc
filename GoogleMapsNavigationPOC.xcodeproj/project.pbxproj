@@ -13,6 +13,7 @@
 		E3CCB0BF2C221C7D008D3ACB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E3CCB0BE2C221C7D008D3ACB /* Base */; };
 		E3CCB0C12C221C7F008D3ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3CCB0C02C221C7F008D3ACB /* Assets.xcassets */; };
 		E3CCB0C42C221C7F008D3ACB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E3CCB0C32C221C7F008D3ACB /* Base */; };
+		E3CCB0CD2C221F7F008D3ACB /* GoogleNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = E3CCB0CC2C221F7F008D3ACB /* GoogleNavigation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3CCB0CD2C221F7F008D3ACB /* GoogleNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = GoogleMapsNavigationPOC;
+			packageProductDependencies = (
+				E3CCB0CC2C221F7F008D3ACB /* GoogleNavigation */,
+			);
 			productName = GoogleMapsNavigationPOC;
 			productReference = E3CCB0B42C221C7D008D3ACB /* GoogleMapsNavigationPOC.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = E3CCB0AB2C221C7D008D3ACB;
+			packageReferences = (
+				E3CCB0CB2C221F7F008D3ACB /* XCRemoteSwiftPackageReference "ios-navigation-sdk" */,
+			);
 			productRefGroup = E3CCB0B52C221C7D008D3ACB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,6 +303,8 @@
 				DEVELOPMENT_TEAM = A9WFR3T443;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoogleMapsNavigationPOC/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Because;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Because;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -305,7 +315,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftlyrush.GoogleMapsNavigationPOC.GoogleMapsNavigationPOC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.underwoodapps.Circuit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -323,6 +333,8 @@
 				DEVELOPMENT_TEAM = A9WFR3T443;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoogleMapsNavigationPOC/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Because;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = Because;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -333,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftlyrush.GoogleMapsNavigationPOC.GoogleMapsNavigationPOC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.underwoodapps.Circuit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -363,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3CCB0CB2C221F7F008D3ACB /* XCRemoteSwiftPackageReference "ios-navigation-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-navigation-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3CCB0CC2C221F7F008D3ACB /* GoogleNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3CCB0CB2C221F7F008D3ACB /* XCRemoteSwiftPackageReference "ios-navigation-sdk" */;
+			productName = GoogleNavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3CCB0AC2C221C7D008D3ACB /* Project object */;
 }
