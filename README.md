@@ -1,17 +1,12 @@
 ## Google Navigation Issue
 
-We are currently using the Google Navigation SDK in our production application but since using Hybrid map type we have noticed a flashing glitch when starting navigation.
+We are currently using the Google Navigation SDK in our production application but we have noticed inconsistent behaviour between iOS and Android.
+
+When starting navigation the speed widget is only displayed when moving and isn't displayed at all when the vehicle is stationary. Although this makes sense for the current speed we're seeing the same behaviour with speed limit.
 
 Steps to Reproduce:
 
 1. Launch the POC
 2. Tap on Start Navigation
-3. Watch for the map "flashing white".
-
-On closer inspection it looks like the map is repainting every time. This doesn't happen in other map types but more noticeable using the .hybrid map type.
-
-Expected result:
-
-1. Launch the POC
-2. Tap on Start Navigation
-3. Navigation starts without flashing or repainting the map.
+3. Watch that the speed information is hidden until moving.
+4. If become stationary again the speed information is hidden again until moving.
