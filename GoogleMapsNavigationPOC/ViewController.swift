@@ -58,6 +58,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             return
         }
         
+        mapView.shouldDisplaySpeedometer = true
+        mapView.shouldDisplaySpeedLimit = true
+        
         GMSNavigationServices.showTermsAndConditionsDialogIfNeeded(
             withTitle: "Testing",
             companyName: "Circuit"
@@ -73,11 +76,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
 
         // Initialize waypoints with location and title
-        let origin = GMSNavigationWaypoint(location: CLLocationCoordinate2D(latitude: 53.715840, longitude: -1.492320), title: "Outwood")!
-        let destination = GMSNavigationWaypoint(location: CLLocationCoordinate2D(latitude: 53.714890, longitude: -1.478710), title: "Sheridan Street")!
+        let destination = GMSNavigationWaypoint(location: CLLocationCoordinate2D(latitude: 53.210845, longitude: -1.712021), title: "Dales")!
 
-        mapView.navigator?.setDestinations([origin, destination]) { routeResult in
+        mapView.navigator?.setDestinations([destination]) { routeResult in
             self.mapView.navigator?.isGuidanceActive = true
+            self.mapView.locationSimulator?.speedMultiplier = 2.5
+            self.mapView.locationSimulator?.simulateLocationsAlongExistingRoute()
             self.mapView.navigator?.sendsBackgroundNotifications = true
             self.mapView.roadSnappedLocationProvider?.startUpdatingLocation()
         }
